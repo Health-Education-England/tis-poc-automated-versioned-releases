@@ -8,3 +8,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  5. testing changelog message
  6. testing changelog messages again
  7. added some fix
+ 8. test feature
