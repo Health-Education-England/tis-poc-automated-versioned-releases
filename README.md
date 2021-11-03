@@ -11,3 +11,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  8. test feature
  9. add a feature
  10. add a fix
+ 11. add a feature with a subject
