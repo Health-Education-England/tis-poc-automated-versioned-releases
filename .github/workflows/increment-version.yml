@@ -13,8 +13,6 @@ jobs:
       
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.1
-        with:
-          cache: true
 
       - name: Increment version
         run: |
