@@ -1,0 +1,22 @@
+name: Increment version
+
+on:
+  push:
+    branches: main
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          cache: true
+
+      - name: Increment version
+        run: |
+          npx @dwmkerr/standard-version --packageFiles build.gradle --bumpFiles build.gradle
+          git push --follow-tags
