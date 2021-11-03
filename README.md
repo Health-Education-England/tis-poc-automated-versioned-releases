@@ -10,3 +10,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  7. added some fix
  8. test feature
  9. add a feature
+ 10. add a fix
