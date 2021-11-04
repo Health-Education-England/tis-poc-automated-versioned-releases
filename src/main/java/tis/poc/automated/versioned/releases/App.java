@@ -9,6 +9,8 @@ public class App {
     }
 
     public static void main(String[] args) {
+        TestMagic testMagic =  new TestMagic();
+        System.out.println(testMagic.magicMe("Steven Spilburg"));
         System.out.println(new App().getGreeting());
     }
 }
