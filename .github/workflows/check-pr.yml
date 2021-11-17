@@ -1,0 +1,17 @@
+name: Check PR
+
+on:
+  pull_request:
+    branches: main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint commits
+        uses: wagoid/commitlint-github-action@v2.0.3
