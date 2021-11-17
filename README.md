@@ -13,3 +13,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  10. add a fix
  11. add a feature with a subject
  12. Naughty un-conventional commit
+ 13. Pretending to update a dependency
