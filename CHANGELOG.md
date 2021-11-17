@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.6](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/compare/v2.0.5...v2.0.6) (2021-11-17)
+
+
+### Chores
+
+* test chore section ([4ef4add](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/commit/4ef4add8bdd4550e60ba3acbce0034b2ce1055b0))
+
 ### [2.0.5](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/compare/v2.0.4...v2.0.5) (2021-11-17)
 
 ### [2.0.4](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/compare/v2.0.3...v2.0.4) (2021-11-17)
