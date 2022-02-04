@@ -1,4 +1,17 @@
 {
+  "bumpFiles": [
+    {
+      "filename": "build.gradle",
+      "type": "gradle"
+    },
+    {
+      "filename": "main.tf",
+      "updater": ".github/workflows/terraform-version-updater.js"
+    }
+  ],
+  "issuePrefixes": [
+    "TIS21-"
+  ],
   "types": [
     {
       "type": "feat",
@@ -28,8 +41,5 @@
       "type": "test",
       "hidden": true
     }
-  ],
-  "issuePrefixes": [
-    "TIS21-"
   ]
 }
