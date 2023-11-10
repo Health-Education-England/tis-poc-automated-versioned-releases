@@ -1,17 +1,11 @@
-name: Check PR
+name: PR Analysis
 
 on:
   pull_request:
-    branches: main
+    branches:
+      - main
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Lint commits
-        uses: wagoid/commitlint-github-action@v2.0.3
+  analysis:
+    name: Analyse PR
+    uses: health-education-england/tis-poc-automated-versioned-releases-reusable/.github/workflows/pr-analysis-common.yml@main
