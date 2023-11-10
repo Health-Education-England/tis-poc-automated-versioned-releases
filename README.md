@@ -15,3 +15,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  12. Naughty un-conventional commit
  13. Pretending to update a dependency
  13. Pretending to update a dependency
+ 13. Pretending to update a dependency
