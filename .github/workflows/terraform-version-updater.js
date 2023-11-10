@@ -1,4 +1,4 @@
-const moduleVersionRegex = /(?<prefix>\sModuleVersion = ")(?<version>[0-9+].[0-9]+.[0-9]+)(?<suffix>"\s)/
+const moduleVersionRegex = /(?<prefix>\sModuleVersion = ")(?<version>\d+.\d+.\d+)(?<suffix>"\s)/
 
 module.exports.readVersion = function (contents) {
   return contents.match(moduleVersionRegex).groups.version;
