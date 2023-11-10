@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/compare/v2.2.0...v2.2.1) (2023-11-10)
+
+
+### Bug Fixes
+
+* test regex update ([c998cfa](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/commit/c998cfaa313d931f599cbb83c37f1b3dc2aab615))
+
 ## [2.2.0](https://github.com/Health-Education-England/tis-poc-automated-versioned-releases/compare/v2.1.1...v2.2.0) (2023-11-10)
 
 
