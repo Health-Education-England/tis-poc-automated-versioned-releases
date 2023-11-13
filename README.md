@@ -19,3 +19,4 @@ A proof of concept for automating version incrementing and releases in Java proj
  13. Pretending to update a dependency
  13. Pretending to update a dependency
  13. Pretending to update a dependency
+ 13. Pretending to update a dependency
