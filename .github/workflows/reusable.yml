@@ -1,0 +1,54 @@
+name: Increment Version
+
+permissions:
+  contents: write
+
+on:
+  workflow_call:
+
+jobs:
+  increment-version:
+    name: Increment Version
+    runs-on: ubuntu-latest
+
+    outputs:
+      new-version:
+        description: The new version after being incremented, or empty if not incremented.
+        value: ${{ steps.increment-version.outputs.new_version }}
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify version increment required
+        id: verify-increment-required
+        run: |
+          if [ `git tag --points-at | grep -Eo 'v[0-9]{1,}.[0-9]{1,}.[0-9]{1,}'` ]; then
+            echo "do_increment=true" >> $GITHUB_OUTPUT
+          else
+            echo "do_increment=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get versioning config files
+        if: steps.verify-increment-required.outputs.do_increment == 'true'
+        run: |
+          config_path=https://raw.githubusercontent.com/health-education-england/.github/main/.github/workflows/auto-version-config
+          curl $config_path/.versionrc > .versionrc
+          curl $config_path/terraform-version-updater.js > terraform-version-updater.js
+
+      - name: Setup Node.js environment
+        if: steps.verify-increment-required.outputs.do_increment == 'true'
+        uses: actions/setup-node@v4
+
+      - name: Increment version
+        id: increment-version
+        if: steps.verify-increment-required.outputs.do_increment == 'true'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          npx @dwmkerr/standard-version
+          git push --follow-tags
+          new_version=`git tag --points-at | grep -Eq 'v[0-9]{1,}.[0-9]{1,}.[0-9]{1,}'`
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
