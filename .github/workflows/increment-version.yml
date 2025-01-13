@@ -15,6 +15,7 @@ jobs:
     name: Publish
     needs: version
     runs-on: ubuntu-latest
+    if: needs.version.outputs.new-version
     steps:
       - run: echo ${{ needs.version.outputs.new-version }}
     
