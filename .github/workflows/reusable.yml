@@ -5,16 +5,18 @@ permissions:
 
 on:
   workflow_call:
+    outputs:
+      new-version:
+        description: The new version after being incremented, or empty if not incremented.
+        value: ${{ jobs.increment-version.outputs.new-version }}
 
 jobs:
   increment-version:
     name: Increment Version
     runs-on: ubuntu-latest
 
-    outputs:
-      new-version:
-        description: The new version after being incremented, or empty if not incremented.
-        value: ${{ steps.increment-version.outputs.new_version }}
+    outputs: 
+      new-version: ${{ steps.increment-version.outputs.new_version }}
 
     steps:
       - name: Checkout codebase
