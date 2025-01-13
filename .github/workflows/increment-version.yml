@@ -4,8 +4,17 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   version:
     name: Auto Version
     uses: health-education-england/tis-poc-automated-versioned-releases-reusable/.github/workflows/auto-version.yml@main
+
+  publish:
+    name: Publish
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.version.outputs.new-version }}
+    
