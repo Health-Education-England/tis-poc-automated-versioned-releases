@@ -9,7 +9,7 @@ terraform {
 
 locals = {
   tags = {
-    ModuleVersion = "2.4.5"
+    ModuleVersion = "2.4.6"
   }
 }
 
